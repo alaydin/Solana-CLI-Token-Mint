@@ -22,7 +22,8 @@ export async function createTokenMetadata(
     description: string
 ) {
     // file to buffer
-    const buffer = fs.readFileSync("/Users/burakalaydin/Desktop/Solana-courses/GalactusToken/src/assets/galactus.jpeg");
+    const path = require("path");
+    const buffer = fs.readFileSync(path.resolve(__dirname, "../src/assets/galactus.jpeg"));
 
     // buffer to metaplex file
     const file = toMetaplexFile(buffer, "galactus.jpeg");
